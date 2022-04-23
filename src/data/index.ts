@@ -1,4 +1,4 @@
-export const runs = [
+export const mockRuns = [
   {
     id: "1",
     name: "First Run",
@@ -6,8 +6,18 @@ export const runs = [
     tags: [
       {
         language: "LT",
-        profile: "public",
+        profile: "Customer",
         keywords: ["pants", "sneakers"],
+      },
+      {
+        language: "UK",
+        profile: "Employee",
+        keywords: ["jumper", "t-shirt"],
+      },
+      {
+        language: "US",
+        profile: "Investor",
+        keywords: ["hat", "socks"],
       },
     ],
     date: "2022-01-20T00:00:00",
@@ -18,9 +28,19 @@ export const runs = [
     brands: ["Redbull", "Monster"],
     tags: [
       {
-        language: "LT",
-        profile: "public",
+        language: "UK",
+        profile: "First Look",
         keywords: ["can", "bottle"],
+      },
+      {
+        language: "DK",
+        profile: "CEO View",
+        keywords: ["strawberry", "orange"],
+      },
+      {
+        language: "NL",
+        profile: "Industry View",
+        keywords: ["50cl", "40cl"],
       },
     ],
     date: "2022-02-20T00:00:00",
@@ -31,9 +51,19 @@ export const runs = [
     brands: ["Apple", "Microsoft"],
     tags: [
       {
-        language: "LT",
-        profile: "public",
+        language: "FR",
+        profile: "Public",
         keywords: ["laptop", "desktop"],
+      },
+      {
+        language: "PL",
+        profile: "Investor",
+        keywords: ["mouse", "keyboard"],
+      },
+      {
+        language: "CA",
+        profile: "Customer",
+        keywords: ["screen", "adapter"],
       },
     ],
     date: "2022-03-20T00:00:00",

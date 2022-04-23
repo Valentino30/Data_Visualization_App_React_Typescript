@@ -23,9 +23,5 @@ export default function ApexBarChart() {
     },
   ];
 
-  return (
-    <div>
-      <Chart options={options} series={series} type="bar" width="800" />;
-    </div>
-  );
+  return <Chart options={options} series={series} type="bar" width="90%" />;
 }

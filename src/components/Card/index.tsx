@@ -1,3 +1,13 @@
+import {
+  StyledCard,
+  StyledCardList,
+  StyledCardListItem,
+  StyledCardTag,
+  StyledCardTitle,
+  StyledContainer,
+  StyledParagraph,
+} from "./styles";
+
 type CardProps = {
   id: string;
   name: string;
@@ -22,50 +32,22 @@ export default function Card({
   const readableDate = new Date(date).toDateString();
 
   return (
-    <div
-      id={id}
-      style={{
-        backgroundColor: "lightgray",
-        borderRadius: 10,
-        marginBottom: 10,
-        padding: 10,
-      }}
-      onClick={onClick}
-    >
-      <h3 style={{ margin: "10px 0px" }}>{name}</h3>
-      <div style={{ display: "flex", marginBottom: 10 }}>
+    <StyledCard id={id} onClick={onClick}>
+      <StyledCardTitle>{name}</StyledCardTitle>
+      <StyledContainer>
         {brands.map((brand) => (
-          <div
-            key={brand}
-            style={{
-              marginRight: 5,
-              backgroundColor: "steelblue",
-              borderRadius: 10,
-              padding: 5,
-            }}
-          >
-            {brand}
-          </div>
+          <StyledCardTag key={brand}>{brand}</StyledCardTag>
         ))}
-      </div>
-      <ul style={{ listStyleType: "none", padding: 0 }}>
+      </StyledContainer>
+      <StyledCardList>
         {tags.map((tag) => (
-          <li
-            key={tag.region}
-            style={{
-              marginBottom: 10,
-              border: "1px solid darkgray",
-              borderRadius: 5,
-              width: "fit-content",
-              padding: 4,
-            }}
-          >
+          <StyledCardListItem key={tag.region}>
             {`${tag.region}: ${tag.profile}: 
             ${tag.keywords.map((keyword) => ` ${keyword}`)}`}
-          </li>
+          </StyledCardListItem>
         ))}
-      </ul>
-      <p style={{ textAlign: "right", margin: 10 }}>{readableDate}</p>
-    </div>
+      </StyledCardList>
+      <StyledParagraph>{readableDate}</StyledParagraph>
+    </StyledCard>
   );
 }

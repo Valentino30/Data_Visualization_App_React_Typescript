@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 
 import Card from "../Card";
+import { StyledList } from "./style";
 
 type ListProps = {
   listItems: {
@@ -19,7 +20,7 @@ type ListProps = {
 export default function List({ listItems }: ListProps) {
   const navigate = useNavigate();
   return (
-    <ul style={{ listStyleType: "none", padding: 0, width: "50%", margin: 0 }}>
+    <StyledList>
       {listItems.map((listItem) => (
         <li key={listItem.id}>
           <Card
@@ -32,6 +33,6 @@ export default function List({ listItems }: ListProps) {
           />
         </li>
       ))}
-    </ul>
+    </StyledList>
   );
 }

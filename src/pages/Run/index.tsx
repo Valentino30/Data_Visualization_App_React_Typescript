@@ -2,7 +2,11 @@ import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
 import { getRun } from "../../utils";
+import { StyledContainer, StyledHeader } from "../RunsList/styles";
+
 import Card from "../../components/Card";
+import { StyledCard } from "../../components/Card/styles";
+import { StyledList } from "../../components/List/style";
 
 type runType = {
   id: string;
@@ -29,32 +33,26 @@ export default function Run() {
   }, [runId]);
 
   return (
-    <ul style={{ listStyleType: "none", padding: 0 }}>
-      <li>
-        {run.id && (
-          <Card
-            id={run.id}
-            name={run.name}
-            brands={run.brands}
-            tags={run.tags}
-            date={run.date}
-          />
-        )}
-      </li>
-      <li>
-        <div
-          onClick={() => navigate("chart")}
-          style={{
-            backgroundColor: "lightgray",
-            borderRadius: 10,
-            marginBottom: 10,
-            padding: 10,
-          }}
-        >
-          <h3>RI Comparison Bar Chart</h3>
-        </div>
-      </li>
-      ;
-    </ul>
+    <StyledContainer>
+      <StyledHeader>{`Run: ${runId}`}</StyledHeader>
+      <StyledList>
+        <li>
+          {run.id && (
+            <Card
+              id={run.id}
+              name={run.name}
+              brands={run.brands}
+              tags={run.tags}
+              date={run.date}
+            />
+          )}
+        </li>
+        <li>
+          <StyledCard onClick={() => navigate("chart")}>
+            <h3>RI Comparison Bar Chart</h3>
+          </StyledCard>
+        </li>
+      </StyledList>
+    </StyledContainer>
   );
 }

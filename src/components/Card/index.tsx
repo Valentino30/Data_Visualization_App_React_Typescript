@@ -3,15 +3,24 @@ type CardProps = {
   name: string;
   brands: string[];
   tags: {
-    language: string;
+    region: string;
     profile: string;
     keywords: string[];
   }[];
   date: string;
+  onClick?: () => void;
 };
 
-export default function Card({ id, name, brands, tags, date }: CardProps) {
+export default function Card({
+  id,
+  name,
+  tags,
+  date,
+  brands,
+  onClick,
+}: CardProps) {
   const readableDate = new Date(date).toDateString();
+
   return (
     <div
       id={id}
@@ -21,11 +30,13 @@ export default function Card({ id, name, brands, tags, date }: CardProps) {
         marginBottom: 10,
         padding: 10,
       }}
+      onClick={onClick}
     >
       <h3 style={{ margin: "10px 0px" }}>{name}</h3>
       <div style={{ display: "flex", marginBottom: 10 }}>
         {brands.map((brand) => (
           <div
+            key={brand}
             style={{
               marginRight: 5,
               backgroundColor: "steelblue",
@@ -40,6 +51,7 @@ export default function Card({ id, name, brands, tags, date }: CardProps) {
       <ul style={{ listStyleType: "none", padding: 0 }}>
         {tags.map((tag) => (
           <li
+            key={tag.region}
             style={{
               marginBottom: 10,
               border: "1px solid darkgray",
@@ -48,7 +60,7 @@ export default function Card({ id, name, brands, tags, date }: CardProps) {
               padding: 4,
             }}
           >
-            {`${tag.language}: ${tag.profile}: 
+            {`${tag.region}: ${tag.profile}: 
             ${tag.keywords.map((keyword) => ` ${keyword}`)}`}
           </li>
         ))}

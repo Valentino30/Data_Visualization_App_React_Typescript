@@ -1,3 +1,5 @@
+import { useNavigate } from "react-router-dom";
+
 import Card from "../Card";
 
 type ListProps = {
@@ -6,7 +8,7 @@ type ListProps = {
     name: string;
     brands: string[];
     tags: {
-      language: string;
+      region: string;
       profile: string;
       keywords: string[];
     }[];
@@ -15,6 +17,7 @@ type ListProps = {
 };
 
 export default function List({ listItems }: ListProps) {
+  const navigate = useNavigate();
   return (
     <ul style={{ listStyleType: "none", padding: 0, width: "50%", margin: 0 }}>
       {listItems.map((listItem) => (
@@ -25,6 +28,7 @@ export default function List({ listItems }: ListProps) {
             brands={listItem.brands}
             tags={listItem.tags}
             date={listItem.date}
+            onClick={() => navigate(`${listItem.id}`)}
           />
         </li>
       ))}

@@ -5,17 +5,17 @@ export const mockRuns = [
     brands: ["Nike", "Adidas"],
     tags: [
       {
-        language: "LT",
+        region: "LT",
         profile: "Customer",
         keywords: ["pants", "sneakers"],
       },
       {
-        language: "UK",
+        region: "UK",
         profile: "Employee",
         keywords: ["jumper", "t-shirt"],
       },
       {
-        language: "US",
+        region: "US",
         profile: "Investor",
         keywords: ["hat", "socks"],
       },
@@ -28,17 +28,17 @@ export const mockRuns = [
     brands: ["Redbull", "Monster"],
     tags: [
       {
-        language: "UK",
+        region: "UK",
         profile: "First Look",
         keywords: ["can", "bottle"],
       },
       {
-        language: "DK",
+        region: "DK",
         profile: "CEO View",
         keywords: ["strawberry", "orange"],
       },
       {
-        language: "NL",
+        region: "NL",
         profile: "Industry View",
         keywords: ["50cl", "40cl"],
       },
@@ -51,17 +51,17 @@ export const mockRuns = [
     brands: ["Apple", "Microsoft"],
     tags: [
       {
-        language: "FR",
+        region: "FR",
         profile: "Public",
         keywords: ["laptop", "desktop"],
       },
       {
-        language: "PL",
+        region: "PL",
         profile: "Investor",
         keywords: ["mouse", "keyboard"],
       },
       {
-        language: "CA",
+        region: "CA",
         profile: "Customer",
         keywords: ["screen", "adapter"],
       },

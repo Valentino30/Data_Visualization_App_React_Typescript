@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 import { getRun } from "../../utils";
 import Card from "../../components/Card";
@@ -18,6 +18,7 @@ type runType = {
 
 export default function Run() {
   const [run, setRun] = useState({} as runType);
+  const navigate = useNavigate();
   const { runId } = useParams();
 
   useEffect(() => {
@@ -40,6 +41,20 @@ export default function Run() {
           />
         )}
       </li>
+      <li>
+        <div
+          onClick={() => navigate("chart")}
+          style={{
+            backgroundColor: "lightgray",
+            borderRadius: 10,
+            marginBottom: 10,
+            padding: 10,
+          }}
+        >
+          <h3>RI Comparison Bar Chart</h3>
+        </div>
+      </li>
+      ;
     </ul>
   );
 }

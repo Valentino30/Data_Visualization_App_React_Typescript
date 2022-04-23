@@ -1,16 +1,10 @@
 import { ResponsiveBar } from "@nivo/bar";
+import { filteredHedgeFunds } from "../../data";
 
-type NivoChartProps = {
-  data: {
-    brand: string;
-    total_score: number;
-  }[];
-};
-
-const NivoChart = ({ data }: NivoChartProps) => {
+const NivoChart = () => {
   return (
     <ResponsiveBar
-      data={data}
+      data={filteredHedgeFunds}
       keys={["total_score"]}
       indexBy="brand"
       margin={{ top: 50, right: 130, bottom: 50, left: 60 }}

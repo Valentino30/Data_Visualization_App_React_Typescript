@@ -1,25 +1,17 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Routes, Route, Navigate } from "react-router-dom";
+
+import Run from "./pages/Run";
+import Chart from "./pages/Chart";
+import RunsList from "./pages/RunsList";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Routes>
+      <Route path="runs" element={<RunsList />} />
+      <Route path="runs/:runId" element={<Run />} />
+      <Route path="runs/:runId/chart" element={<Chart />} />
+      <Route path="*" element={<Navigate to="runs" />} />
+    </Routes>
   );
 }
 

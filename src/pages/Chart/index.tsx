@@ -1,9 +1,9 @@
-import ApexBarChart from "../../components/ApexBarChart";
+import BarChart from "../../components/BarChart";
 
 export default function Chart() {
   return (
     <div>
-      <ApexBarChart />
+      <BarChart />
     </div>
   );
 }

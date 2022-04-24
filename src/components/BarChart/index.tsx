@@ -1,7 +1,7 @@
 import Chart from "react-apexcharts";
 import { filteredHedgeFunds } from "../../data";
 
-export default function ApexBarChart() {
+export default function BarChart() {
   const options = {
     chart: {
       id: "basic-bar",

@@ -2622,6 +2622,6 @@ export const hedgeFunds = [
 ];
 
 export const filteredHedgeFunds = hedgeFunds.slice(0, 10).map((hedgeFund) => ({
-  brand: hedgeFund.brand + hedgeFund.region,
+  brand: `${hedgeFund.brand}: ${hedgeFund.region}`,
   total_score: hedgeFund.total_score,
 }));

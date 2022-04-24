@@ -1,23 +1,15 @@
 import {
   StyledCard,
-  StyledCardList,
-  StyledCardListItem,
   StyledCardTag,
+  StyledCardList,
   StyledCardTitle,
   StyledContainer,
   StyledParagraph,
+  StyledCardListItem,
 } from "./styles";
+import { runType } from "../../types/run";
 
-type CardProps = {
-  id: string;
-  name: string;
-  brands: string[];
-  tags: {
-    region: string;
-    profile: string;
-    keywords: string[];
-  }[];
-  date: string;
+type CardProps = runType & {
   onClick?: () => void;
 };
 

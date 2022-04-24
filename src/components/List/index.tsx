@@ -2,19 +2,10 @@ import { useNavigate } from "react-router-dom";
 
 import Card from "../Card";
 import { StyledList } from "./style";
+import { runType } from "../../types/run";
 
 type ListProps = {
-  listItems: {
-    id: string;
-    name: string;
-    brands: string[];
-    tags: {
-      region: string;
-      profile: string;
-      keywords: string[];
-    }[];
-    date: string;
-  }[];
+  listItems: runType[];
 };
 
 export default function List({ listItems }: ListProps) {

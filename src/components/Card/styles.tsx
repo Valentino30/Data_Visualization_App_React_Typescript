@@ -2,13 +2,14 @@ import styled from "styled-components";
 
 import {
   lightTextGray1,
+  lightTextBlue1,
   darkBackgroundBlue1,
   lightBackgroundBlue1,
   lightBackgroundBlue2,
-  lightTextBlue1,
 } from "../../styles";
 
 export const StyledCard = styled.div`
+  cursor: ${(props) => props.onClick && "pointer"};
   background-color: ${lightBackgroundBlue1};
   border-radius: 10px;
   margin-bottom: 10px;

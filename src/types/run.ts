@@ -16,4 +16,5 @@ export type RunContextType = {
   runs: runType[] | [];
   run: runType | null;
   loading: boolean;
+  error: boolean;
 };

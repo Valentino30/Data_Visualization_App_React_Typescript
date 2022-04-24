@@ -2,14 +2,16 @@ import { useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
 import { useRun } from "../../hooks/run";
-import { StyledContainer, StyledHeader } from "../RunsList/styles";
+import { StyledContainer, StyledHeader } from "./styles";
 
 import Card from "../../components/Card";
+import Error from "../../components/Error";
+import Loading from "../../components/Loading";
 import { StyledList } from "../../components/List/style";
 import { StyledCard } from "../../components/Card/styles";
 
 export default function Run() {
-  const { getRun, loading, run } = useRun();
+  const { getRun, loading, error, run } = useRun();
   const navigate = useNavigate();
   const { runId } = useParams();
 
@@ -18,30 +20,23 @@ export default function Run() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  if (loading) {
-    return (
-      <StyledContainer>
-        <StyledHeader>Fetching data...</StyledHeader>
-      </StyledContainer>
-    );
-  }
+  if (loading) return <Loading />;
+  if (error) return <Error />;
 
   return (
     <StyledContainer>
-      {run && (
+      {run?.id && (
         <>
           <StyledHeader>{`Run: ${runId}`}</StyledHeader>
           <StyledList>
             <li>
-              {run.id && (
-                <Card
-                  id={run.id}
-                  name={run.name}
-                  brands={run.brands}
-                  tags={run.tags}
-                  date={run.date}
-                />
-              )}
+              <Card
+                id={run.id}
+                name={run.name}
+                brands={run.brands}
+                tags={run.tags}
+                date={run.date}
+              />
             </li>
             <li>
               <StyledCard onClick={() => navigate("chart")}>

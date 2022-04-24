@@ -48,6 +48,7 @@ export const StyledCardListItem = styled.li`
 
 export const StyledParagraph = styled.p`
   color: ${lightTextGray1};
+  color: ${(props) => props.color};
   text-align: right;
   margin: 0px;
 `;
